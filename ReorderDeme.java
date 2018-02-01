@@ -6,7 +6,7 @@ public class ReorderDemo {
             obj.write();
         }).start();
 
-        // maybe x<y
+        // 由于编译器优化，指令重排，可能存在x<y的情况。
         new Thread(() -> {
             obj.read();
         }).start();
