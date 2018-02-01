@@ -7,6 +7,7 @@ public class ReorderDemo {
         }).start();
 
         // 由于编译器优化，指令重排，可能存在x<y的情况。
+        // 通过给write() read()方法增加synchronized同步可以解决。
         new Thread(() -> {
             obj.read();
         }).start();
