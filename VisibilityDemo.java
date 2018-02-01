@@ -8,6 +8,7 @@ public class VisibilityDemo {
             e.printStackTrace();
         }
         //并不能使runner线程退出，因为可见性问题，就像是缓存。
+        //主线程写入的quit值并不能立刻被子线程可见。
 
         runner.shutdown();
         System.out.println("Shut down!");
